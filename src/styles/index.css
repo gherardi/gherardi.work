@@ -71,7 +71,11 @@
 		@apply border-border;
 	}
 	html {
-		scrollbar-gutter: stable;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		/* scrollbar-gutter: stable; */
 	}
 	body {
 		@apply bg-background text-foreground font-inter;

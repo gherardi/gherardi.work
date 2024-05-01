@@ -1,6 +1,13 @@
 ---
 import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
+
+interface Props {
+	title?: string;
+}
+
+const { title = 'Victor Gherardi | Developer and Cloud Enthusiast' }: Props =
+	Astro.props;
 ---
 
 <script is:inline>
@@ -29,7 +36,7 @@ import Header from '@/components/Header.astro';
 
 <html lang='en'>
 	<head>
-		<BaseHead />
+		<BaseHead title={title} />
 	</head>
 	<body>
 		<div class='min-h-svh bg-slate-00'>
