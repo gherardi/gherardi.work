@@ -1,0 +1,77 @@
+---
+import { Badge } from '@/components/ui/badge';
+
+type Project = {
+	name: string;
+	description: string;
+	url: string;
+	tags: string[];
+};
+
+const projects: Project[] = [
+	{
+		name: 'Hotel Hub',
+		description:
+			'Applicazione web gestionale per alberghi, operazioni crud su prenotazioni e camere, app Multitenancy.',
+		url: 'https://github.com/gherardi/hotel-hub',
+		tags: ['In progress'],
+	},
+	{
+		name: 'Documento valutazione rischi',
+		description:
+			'Applicazione web per la generazione del documento allegato al D.V.R. (documento valutazione rischi).',
+		url: 'https://github.com/gherardi/dvr',
+		tags: [],
+	},
+	{
+		name: 'Typescript RESTful API',
+		description:
+			'Completa RESTful API in Typescript, con autenticazione JWT, middleware, error handling.',
+		url: 'https://github.com/gherardi/ts-restful-api',
+		tags: [],
+	},
+	{
+		name: 'Logistica',
+		description:
+			'Applicazione web per condurre ricerca operative utilizzando due metodi.',
+		url: 'https://github.com/gherardi/logistica',
+		tags: [],
+	},
+	{
+		name: 'Labirinto',
+		description:
+			'Gioco del labirinto realizzato interamente con HTML, Tailwindcss e javascript.',
+		url: 'https://github.com/gherardi/labirinto',
+		tags: [],
+	},
+];
+---
+
+<ul class='space-y-4 text-sm empty:hidden'>
+	{
+		projects.map((project) => (
+			<li class='bg-orange-20'>
+				<a
+					class='flex flex-col space-y-1.5 !no-underline py-4 px-6 rounded-md border hover:bg-muted transition'
+					href={project.url}
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					<>
+						<div>
+							<span class='font-medium underline underline-offset-4'>
+								{project.name}
+							</span>
+							{project.tags.map((tag) => (
+								<Badge className='scale-75 rounded-lg'>{tag}</Badge>
+							))}
+						</div>
+						<span class='text-muted-foreground line-clamp-2'>
+							{project.description}
+						</span>
+					</>
+				</a>
+			</li>
+		))
+	}
+</ul>

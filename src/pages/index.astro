@@ -1,7 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import ProjectList from '@/components/ProjectList.astro';
 ---
 
 <Layout>
-	<main class="bg-green-400">main</main>
+	<main class="pb-16">
+		<section>
+			<h4 class='font-mono text-lg mb-4'>projects</h4>
+			<ProjectList />
+		</section>
+	</main>
 </Layout>
