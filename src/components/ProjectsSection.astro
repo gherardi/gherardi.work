@@ -47,31 +47,36 @@ const projects: Project[] = [
 ];
 ---
 
-<ul class='space-y-4 text-sm empty:hidden'>
-	{
-		projects.map((project) => (
-			<li class='bg-orange-20'>
-				<a
-					class='flex flex-col space-y-1.5 !no-underline py-4 px-6 rounded-md border hover:bg-muted transition'
-					href={project.url}
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					<>
-						<div>
-							<span class='font-medium underline underline-offset-4'>
-								{project.name}
-							</span>
-							{project.tags.map((tag) => (
-								<Badge className='scale-75 rounded-lg'>{tag}</Badge>
-							))}
-						</div>
-						<span class='text-muted-foreground line-clamp-2'>
-							{project.description}
-						</span>
-					</>
-				</a>
-			</li>
-		))
-	}
-</ul>
+<section>
+	<h4 class='font-mono text-lg mb-4'>projects</h4>
+	<div>
+		<ul class='space-y-4 text-sm empty:hidden'>
+			{
+				projects.map((project) => (
+					<li>
+						<a
+							class='flex flex-col space-y-1.5 !no-underline py-4 px-6 rounded-md border hover:bg-muted transition'
+							href={project.url}
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<>
+								<div>
+									<span class='font-medium underline underline-offset-4'>
+										{project.name}
+									</span>
+									{project.tags.map((tag) => (
+										<Badge className='scale-75 rounded-lg'>{tag}</Badge>
+									))}
+								</div>
+								<span class='text-muted-foreground line-clamp-2'>
+									{project.description}
+								</span>
+							</>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>

@@ -1,16 +1,20 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import ProjectList from '@/components/ProjectList.astro';
+
+import ProjectsSection from '@/components/ProjectsSection.astro';
+import SkillsSection from '@/components/SkillsSection.astro';
+import ContactsSection from '@/components/ContactsSection.astro';
+
+import Footer from '@/components/Footer.astro';
 ---
 
 <Layout>
-	<main class="pb-12">
-		<section>
-			<h4 class='font-mono text-lg mb-4'>projects</h4>
-			<ProjectList />
-		</section>
+	<main class='pb-8 bg-emerald-00 space-y-12'>
+		<ProjectsSection />
+		<SkillsSection />
+		<ContactsSection />
 	</main>
-	<footer class='py-16'>
+	<footer class='py-16 bg-pink-00'>
 		<Footer />
 	</footer>
 </Layout>

@@ -1,0 +1,42 @@
+---
+import { Button } from '@/components/ui/button';
+
+const contacts = [
+	{
+		name: 'github profile',
+		url: 'https://www.github.com/gherardi',
+	},
+	// {
+	// 	name: 'linkedin profile',
+	// 	url: 'https://www.linkedin.com/gherardi',
+	// },
+	{
+		name: 'email address',
+		url: 'mailto:gherardivictor@gmail.com',
+	},
+];
+---
+
+<section class='bg-emerald-40'>
+	<h4 class='font-mono text-lg mb-4'>contacts</h4>
+
+	<div
+		class='flex flex-col md:flex-row gap-4 justify-between text-sm font-bold'
+	>
+		<!-- <HoverCardLink client:media='(pointer:fine)' /> -->
+		{
+			contacts?.map(({ name, url }) => (
+				<a
+					href={url}
+					target='_blank'
+					rel='noopener noreferrer'
+					class='block w-full'
+				>
+					<Button variant='outline' className='underline w-full inline-flex'>
+						{name}
+					</Button>
+				</a>
+			))
+		}
+	</div>
+</section>
